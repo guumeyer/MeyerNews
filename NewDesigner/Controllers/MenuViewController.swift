@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  MenuViewController.swift
 //  NewDesigner
 //
 //  Created by gustavo r meyer on 1/17/17.
@@ -9,30 +9,23 @@
 import UIKit
 import Spring
 
-class LoginViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     // MARK: - Variable
-    
     
     // MARK: - Outlets
     @IBOutlet weak var dialogView: DesignableView!
     
-    
     // MARK: - Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
+    
     // MARK: - Actions
-    @IBAction func loginButtonDidTouch(_ sender: Any) {
-        dialogView.animation = "shake"
-        dialogView.animate()
+    @IBAction func closeButtonDidTouch(_ sender: Any) {
+        dialogView.animation = "zoomOut"
+        dialogView.animateNext {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
-    @IBAction func closeButtonDidTouch(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     // MARK: - Navigation
-
 }
