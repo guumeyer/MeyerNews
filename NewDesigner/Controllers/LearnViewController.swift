@@ -33,7 +33,12 @@ class LearnViewController: UIViewController {
     // MARK: - Actions
     @IBAction func learnButtonDidTouch(_ sender: Any) {
         bookImageView.animation = "pop"
-        bookImageView.animate()
+        bookImageView.animateNext {
+            self.openURL("http://designcode.io")
+        }
+    }
+    @IBAction func twitterButtonDidTouch(_ sender: AnyObject) {
+        openURL("http://twitter.com/guumeyer")
     }
     
     @IBAction func closeButtonDidToach(_ sender: Any) {
@@ -43,7 +48,16 @@ class LearnViewController: UIViewController {
         }
     }
     
-    // MARK: - Navigation
+    // MARK: - Functions
+    func openURL(_ url: String) {
+        let targetURL = URL(string: url)
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(targetURL!, options: [String:Any](), completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(targetURL!)
+
+        }
+    }
     
 
 }
