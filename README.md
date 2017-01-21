@@ -1,5 +1,6 @@
 # MeyerNews
-IOS Project with a lot  animations. This project is a result of this course Design+Code (https://designcode.io/)
+IOS Project with a lot of animations samples. 
+This project is a result of this course Design+Code (https://designcode.io/)
 
 # Tecnhology
 Swift 3
